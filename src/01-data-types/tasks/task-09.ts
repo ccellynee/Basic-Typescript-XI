@@ -14,3 +14,40 @@
  * 2. Store the participant data in a single collection.
  * 3. Display the participant data using console.log.
  */
+
+type register = {
+    studentId: string;
+    name: string;
+    age: number;
+    hasPaid: boolean;
+}
+
+const registers: register [] = [
+    {
+         studentId: "ST001",
+         name: "Ahmad Fauzi",
+         age: 16,
+         hasPaid: true,
+    },
+    {
+         studentId: "ST002",
+         name: "Siti Nurhaliza",
+         age: 17,
+         hasPaid: false,
+    },
+    {
+         studentId: "ST003",
+         name: "Budi Santoso",
+         age: 16,
+         hasPaid: true,
+    },
+        ]
+
+        registers.forEach((register) => {
+        console.log({
+    studentId: register.studentId,
+    name: register.name,
+    age: register.age,
+    hasPaid: register.hasPaid ? "Yes" : "No",
+  });
+});

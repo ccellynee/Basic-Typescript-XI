@@ -10,3 +10,43 @@
  * 
  * display the book data using console.log.
  */
+
+type book = {
+    ISBN: string;
+    title: string;
+    author: string;
+    totalPages: number;
+    category: string;
+    isAvailable: boolean;
+}
+
+const book1: book = {
+    ISBN: "9786021234567",
+    title: "Harry Potter and the Philosopher's Stone",
+    author: "J.K. Rowling",
+    totalPages: 223,
+    category: "Fantasy",
+    isAvailable: true,
+}
+
+const book2: book = {
+    ISBN: "9786027654321",
+    title: "The Hobbit",
+    author: "J.R.R. Tolkien",
+    totalPages: 310,
+    category: "Fantasy",
+    isAvailable: false,
+};
+
+const book3: book = {
+    ISBN: "9786239876543",
+    title: "Atomic Habits",
+    author: "James Clear",
+    totalPages: 320,
+    category: "Self Improvement",
+    isAvailable: true,
+};
+
+console.log("Book 1:", book1);
+console.log("Book 2:", book2);
+console.log("Book 3:", book3);

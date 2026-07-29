@@ -14,3 +14,21 @@
  *  - Final payment
  * 2. Display the calculation results.
  */
+
+const friedRice: number = 18000;
+const FrQuantity: number = 3;
+
+const mineralWater: number = 5000;
+const mineralQuantity: number = 2;
+
+const discount: number = 10000;
+
+const totalFood: number = friedRice*FrQuantity;
+const totalDrink: number = mineralWater*mineralQuantity;
+const grandTotal: number = totalFood+totalDrink;
+const finalPayment: number = grandTotal-discount;
+
+console.log ("Total food price:", totalFood);
+console.log ("Total drink price:", totalDrink);
+console.log ("Grand total:", grandTotal);
+console.log ("Final payment:", finalPayment);
