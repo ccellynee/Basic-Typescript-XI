@@ -17,7 +17,7 @@
  * 3. Display the product data using console.log.
  */
 
-type product = {
+type Product = {
   productCode: string;
   productName: string;
   price: number;
@@ -25,7 +25,7 @@ type product = {
   freeShipping: boolean;
 };
 
-const products: product[] = [
+const products: Product[] = [
   {
     productCode: "KB001",
     productName: "Mechanical Keyboard",
@@ -57,11 +57,5 @@ const products: product[] = [
 ];
 
 products.forEach((product) => {
-  console.log({
-    productCode: product.productCode,
-    productName: product.productName,
-    price: product.price,
-    quantity: product.quantity,
-    freeShipping: product.freeShipping ? "Yes" : "No",
-  });
+  console.log(product);
 });

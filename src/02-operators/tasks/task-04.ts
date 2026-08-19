@@ -22,3 +22,22 @@
  *  - Calculate the final payment.
 
  */
+const MechanicalKeyboard : number = 850000;
+const WirelessMouse : number = 275000;
+const mousePad : number = 120000;
+const MechanicalQty : number = 1;
+const WirelessQty: number = 2;
+const mouseQty: number = 1;
+
+const isPremium : boolean = true;
+
+const subtotal = 
+(MechanicalKeyboard * MechanicalQty) +
+(WirelessMouse * WirelessQty) +
+(mousePad * mouseQty);
+
+const discount : number = subtotal * 0.1
+const totalItems : number = MechanicalQty + WirelessQty + mouseQty
+const finalPayment : number = subtotal > 1000000 ? subtotal - discount : subtotal
+
+console.log("Subtota")

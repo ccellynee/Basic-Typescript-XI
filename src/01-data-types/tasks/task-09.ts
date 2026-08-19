@@ -43,11 +43,11 @@ const registers: register [] = [
     },
         ]
 
-        registers.forEach((register) => {
-        console.log({
-    studentId: register.studentId,
-    name: register.name,
-    age: register.age,
-    hasPaid: register.hasPaid ? "Yes" : "No",
+     registers.forEach((register) => {
+     console.log({
+     studentId: register.studentId,
+     name: register.name,
+     age: register.age,
+     hasPaid: register.hasPaid ? "Yes" : "No",
   });
 });
