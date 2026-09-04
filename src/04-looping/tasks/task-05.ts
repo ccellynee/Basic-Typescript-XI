@@ -24,3 +24,31 @@ const scores = [
     67, 79, 94, 83, 71,
     96, 65, 87, 74, 90
 ];
+
+let gold = 0;
+let silver = 0;
+let bronze = 0;
+let noMedal = 0;
+let totalScore = 0;
+
+for (let i = 0; i < scores.length; i++) {
+    totalScore += scores[i];
+
+    if(scores[i] >= 95 ){
+        gold++;
+    } else if (scores[i] >= 85) {
+        silver++;
+    } else if (scores[i] >= 75) {
+        bronze++;
+    } else {
+        noMedal++
+    }
+}
+
+const average = totalScore / scores.length;
+
+console.log ("Gold medal:", gold);
+console.log ("Silver medal:", silver);
+console.log ("Bronze medal:", bronze);
+console.log ("No medal:", noMedal);
+console.log ("Average competition score:", average);

@@ -12,22 +12,3 @@
  * Create the following functions:
  */
 
-function calculateTotalSales(sales: number[]): number {
-
-}
-
-function findHighestTransaction(sales: number[]): number {
-
-}
-
-function findLowestTransaction(sales: number[]): number {
-
-}
-
-function calculateAverageSale(sales: number[]): number {
-
-}
-
-function countLargeTransactions(sales: number[], minimumAmount: number): number {
-
-}
