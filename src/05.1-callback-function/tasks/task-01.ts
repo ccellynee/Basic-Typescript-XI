@@ -27,3 +27,25 @@ registerStudent(`John Cena`, showRegistrationMessage)
  * create another function that display welcomming message for entire student!
  * Don't forget to implement callback function.
  * */
+
+/** Callback function to display welcoming message */
+function showWelcomeMessage(name: string): void {
+    console.log(`Welcome back, ${name}!`);
+}
+
+/** Function to display welcoming message for entire students */
+function welcomeAllStudents(
+    students: string[],
+    callback: (name: string) => void
+): void {
+    for (const student of students) {
+        callback(student);
+    }
+}
+
+// Implement callback function for a student
+registerStudent(`The Rock`, showWelcomeMessage);
+
+// Implement callback function for entire students
+const entireStudents: string[] = ["Celyn", "Ceyy", "Aca"];
+welcomeAllStudents(entireStudents, showWelcomeMessage);
