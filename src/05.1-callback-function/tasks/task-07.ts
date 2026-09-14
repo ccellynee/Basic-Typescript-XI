@@ -35,3 +35,4 @@ const students = [
     { name: "Eka", score: 95, attendance: 82 },
     { name: "Fajar", score: 79, attendance: 97 }
 ];
+
