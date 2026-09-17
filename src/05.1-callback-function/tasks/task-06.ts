@@ -69,7 +69,6 @@ function getPerformanceStatus(selectedEmployee: Employee): EMPLOYEE_PERFORMANCE 
 
     return {...selectedEmployee, status};
 }
-
 function employeeProcess<T>(
     arr: Employee[],
     callback: (employee: Employee) => T
