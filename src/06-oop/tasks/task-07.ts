@@ -33,6 +33,11 @@ class Employee {
     calculateSalary(): number {
         return this.basicSalary;
     }
+
+    showInfo(): void {
+        console.log(`Name: ${this.name}`);
+        console.log(`Basic Salary: Rp${this.basicSalary.toLocaleString("en-US")}`);
+    }
 }
 
 class FullTimeEmployee extends Employee {
@@ -47,6 +52,13 @@ class FullTimeEmployee extends Employee {
 
     calculateSalary(): number {
         return this.basicSalary + this.allowance;
+    }
+
+    showInfo(): void {
+        console.log("Fulltime Employee");
+        console.log(`Name: ${this.name}`);
+        console.log(`Basic Salary: Rp${this.basicSalary.toLocaleString("en-US")}`);
+        console.log(`Allowance: Rp${this.allowance.toLocaleString("en-US")}`);
     }
 }
 
@@ -64,6 +76,14 @@ class PartTimeEmployee extends Employee {
     calculateSalary(): number {
         return this.basicSalary + (this.hoursWorked * this.hourlyRate);
     }
+
+    showInfo(): void {
+        console.log("ParttimeEmployee");
+        console.log(`Name: ${this.name}`);
+        console.log(`Basic Salary: Rp${this.basicSalary.toLocaleString("en-US")}`);
+        console.log(`Hours Worked: ${this.hoursWorked}`);
+        console.log(`Hourly Rate: Rp${this.hourlyRate.toLocaleString("en-US")}`);
+    }
 }
 
 const employees: Employee[] = [
@@ -71,6 +91,9 @@ const employees: Employee[] = [
     new PartTimeEmployee(`Erling Haaland`, `112`, 2000000, 40, 50000)
 ];
 
-for (const employee of employees) {
-    console.log(`${employee.name} receive ${employee.calculateSalary()}`);
-}
+for (let i = 0; i < employees.length; i++) {
+    employees[i].showInfo();
+    if (i < employees.length - 1) {
+        console.log("");
+    }
+}
