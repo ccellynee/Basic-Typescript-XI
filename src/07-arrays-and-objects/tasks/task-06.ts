@@ -8,7 +8,6 @@
  * 5. Calculate the average borrowing duration.
  * 6. Find students who borrowed books for more than 7 days.
  */
-
 const books = [
     { id: 1, title: "Clean Code", category: "Programming", stock: 3 },
     { id: 2, title: "Atomic Habits", category: "Self Development", stock: 5 },
@@ -24,3 +23,49 @@ const borrowings = [
     { student: "Eka", bookId: 1, days: 4 },
     { student: "Andi", bookId: 3, days: 8 },
 ];
+
+const andiBorrowings = borrowings.filter(
+    (borrowing) => borrowing.student === "Andi"
+);
+
+console.log("Andi's Borrowings");
+console.log(andiBorrowings);
+
+const borrowingBookInfo = borrowings.map((borrowing) =>
+    books.find((book) => book.id === borrowing.bookId)
+);
+
+console.log("\nInformation");
+console.log(borrowingBookInfo);
+
+const programmingBorrowers = borrowings
+    .filter((borrowing) => {
+        const book = books.find((book) => book.id === borrowing.bookId);
+        return book?.category === "Programming";
+    })
+    .map((borrowing) => borrowing.student);
+
+console.log("\nProgramming Book Borrowers");
+console.log(programmingBorrowers);
+
+const totalBorrowings = borrowings.length;
+
+console.log("\nTotal Borrowing Transactions");
+console.log(`Total Borrowings: ${totalBorrowings}`);
+
+const totalDays = borrowings.reduce(
+    (total, borrowing) => total + borrowing.days,
+    0
+);
+
+const averageDays = totalDays / borrowings.length;
+
+console.log("\nAverage Borrowing Duration");
+console.log(`Average Days: ${averageDays}`);
+
+const longBorrowers = borrowings
+    .filter((borrowing) => borrowing.days > 7)
+    .map((borrowing) => borrowing.student);
+
+console.log("\nBorrowed More Than 7 Days");
+console.log(longBorrowers);
