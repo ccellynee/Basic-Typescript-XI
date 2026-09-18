@@ -33,6 +33,7 @@
  * Each child class should add its own properties.
  * 
  */
+
 class Person {
     constructor(
         public name: string,
@@ -43,3 +44,56 @@ class Person {
         console.log(`${this.name}, ${this.age} years old`);
     }
 }
+
+class Student extends Person {
+    constructor(
+        name: string,
+        age: number,
+        public studentId: string,
+        public grade: number
+    ) {
+        super(name, age);
+    }
+
+    showInfo(): void {
+        console.log(`Student: ${this.name}`);
+        console.log(`Age: ${this.age}`);
+        console.log(`Student ID: ${this.studentId}`);
+        console.log(`Grade: ${this.grade}`);
+    }
+}
+
+class Teacher extends Person {
+    constructor(
+        name: string,
+        age: number,
+        public employeeId: string,
+        public subject: string
+    ) {
+        super(name, age);
+    }
+
+    showInfo(): void {
+        console.log(`Teacher: ${this.name}`);
+        console.log(`Age: ${this.age}`);
+        console.log(`Employee ID: ${this.employeeId}`);
+        console.log(`Subject: ${this.subject}`);
+    }
+}
+
+const student = new Student(
+    "Kylian Mbappé",
+    17,
+    "ST001",
+    11
+);
+
+const teacher = new Teacher(
+    "Cristiano Ronaldo",
+    38,
+    "EMP001",
+    "Programming"
+);
+
+student.showInfo();
+teacher.showInfo();
