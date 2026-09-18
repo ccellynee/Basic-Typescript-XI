@@ -34,6 +34,58 @@
  * for get value of package weight
  */
 
+class Shipping {
+    constructor(
+        public trackingNumber: string,
+        public destination: string,
+        private weight: number
+    ) { }
+
+    getWeight(): number {
+        return this.weight;
+    }
+
+    calculateCost(): number {
+        return 0;
+    }
+
+    showShipment(): void {
+        console.log("---------------------");
+        console.log(`Tracking: ${this.trackingNumber}`);
+        console.log(`Destination: ${this.destination}`);
+        console.log(`Weight: ${this.getWeight()} kg`);
+    }
+}
+
+class RegularShipping extends Shipping {
+    calculateCost(): number {
+        return this.getWeight() * 10000;
+    }
+}
+
+class ExpressShipping extends Shipping {
+    calculateCost(): number {
+        return this.getWeight() * 20000;
+    }
+}
+
+class SameDayShipping extends Shipping {
+    calculateCost(): number {
+        return this.getWeight() * 30000;
+    }
+}
+
+class InternationalShipping extends Shipping {
+    calculateCost(): number {
+        return this.getWeight() * 100000;
+    }
+}
+
+const regularShipping = new RegularShipping("REG001", "Malang", 3);
+const expressShipping = new ExpressShipping("EXP001", "Surabaya", 2);
+const sameDayShipping = new SameDayShipping("SMD001", "Jakarta", 4);
+const internationalShipping = new InternationalShipping("INT001", "Singapore", 5);
+
 const shipments: Shipping[] = [
   regularShipping,
   expressShipping,
@@ -41,5 +93,6 @@ const shipments: Shipping[] = [
 ];
 
 for (const shipment of shipments) {
-  console.log(shipment.calculateCost());
+  shipment.showShipment();
 }
+console.log("---------------------");
