@@ -42,7 +42,7 @@ const completedOrders = orders.filter(
 );
 
 console.log("Completed Orders");
-console.log(completedOrders);
+console.dir(completedOrders, { depth: null });
 
 const orderTotals = orders.map((order) => {
     const total = order.items.reduce(
