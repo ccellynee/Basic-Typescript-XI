@@ -57,10 +57,8 @@ const above85 = averageScores.filter(
 
 console.log("\nAverage Score Above 85");
 console.log(above85);
-
 const below80 = employees.filter((employee) =>
     employee.projects.some((project) => project.score < 80)
 );
-
 console.log("\nHave Project Score Below 80");
 console.dir(below80, { depth: null });

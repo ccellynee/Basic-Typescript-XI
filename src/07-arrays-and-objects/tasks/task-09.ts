@@ -58,9 +58,7 @@ const highestLikesPost = posts.reduce((max, post) =>
 
 console.log("\nPost with Highest Likes");
 console.dir(highestLikesPost, { depth: null });
-
 const totalLikes = posts.reduce((sum, post) => sum + post.likes, 0);
-
 console.log("\nTotal Likes");
 console.log(`Total Likes: ${totalLikes}`);
 
