@@ -119,4 +119,4 @@ console.log("\n====== TRANSACTION CATEGORIES ======");
 console.log(transactionsWithCategory);
 
 console.log("\n====== PLATFORM FEES ======");
-console.log(transactionsWithFee);
+console.log(transactionsWithFee);
