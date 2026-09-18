@@ -34,11 +34,24 @@ class Payment {
     calculateFee(): number {
         return 0;
     }
+
+    showTransaction(): void {
+        console.log("---------------------");
+        console.log(`Transaction: ${this.transactionId}`);
+        console.log(`Amount: Rp${this.amount.toLocaleString("en-US")}`);
+    }
 }
 
 class CreditCardPayment extends Payment {
     calculateFee(): number {
         return this.amount * 0.02;
+    }
+
+    showTransaction(): void {
+        console.log("---------------------");
+        console.log("Credit Card");
+        console.log(`Transaction: ${this.transactionId}`);
+        console.log(`Amount: Rp${this.amount.toLocaleString("en-US")}`);
     }
 }
 
@@ -46,11 +59,25 @@ class BankTransferPayment extends Payment {
     calculateFee(): number {
         return 5000;
     }
+
+    showTransaction(): void {
+        console.log("---------------------");
+        console.log("Bank Transfer");
+        console.log(`Transaction: ${this.transactionId}`);
+        console.log(`Amount: Rp${this.amount.toLocaleString("en-US")}`);
+    }
 }
 
 class EWalletPayment extends Payment {
     calculateFee(): number {
         return this.amount * 0.01;
+    }
+
+    showTransaction(): void {
+        console.log("---------------------");
+        console.log("E-Wallet");
+        console.log(`Transaction: ${this.transactionId}`);
+        console.log(`Amount: Rp${this.amount.toLocaleString("en-US")}`);
     }
 }
 
@@ -76,5 +103,6 @@ const payments: Payment[] = [
 ];
 
 for (const payment of payments) {
-    console.log(payment.calculateFee());
+    payment.showTransaction();
 }
+console.log("---------------------");
