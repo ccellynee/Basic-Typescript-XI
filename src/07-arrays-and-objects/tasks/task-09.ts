@@ -34,7 +34,6 @@ const posts = [
   },
 ];
 
-// 1. Find post that containing "typescript"!
 const typescriptPosts = posts.filter(
   (post) =>
     post.hashtags.includes("typescript") ||
@@ -44,7 +43,6 @@ const typescriptPosts = posts.filter(
 console.log("Posts Containing 'typescript'");
 console.dir(typescriptPosts, { depth: null });
 
-// 2. Find post that containing "nestjs"!
 const nestjsPosts = posts.filter(
   (post) =>
     post.hashtags.includes("nestjs") ||
@@ -54,7 +52,6 @@ const nestjsPosts = posts.filter(
 console.log("\nPosts Containing 'nestjs'");
 console.dir(nestjsPosts, { depth: null });
 
-// 3. Find the post with highest number of likes!
 const highestLikesPost = posts.reduce((max, post) =>
   post.likes > max.likes ? post : max
 );
@@ -62,7 +59,6 @@ const highestLikesPost = posts.reduce((max, post) =>
 console.log("\nPost with Highest Likes");
 console.dir(highestLikesPost, { depth: null });
 
-// 4. Calculate the total of likes!
 const totalLikes = posts.reduce((sum, post) => sum + post.likes, 0);
 
 console.log("\nTotal Likes");
